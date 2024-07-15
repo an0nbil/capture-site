@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Capture Referrer</title>
+</head>
+<body>
+    <script>
+        const referrer = document.referrer;
+        fetch('https://your-logging-server.com/log', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ referrer: referrer })
+        });
+    </script>
+</body>
+</html>
